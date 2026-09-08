@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsunami Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="map-container">
+            <canvas id="gameCanvas"></canvas>
+            
+            <!-- Controls -->
+            <div class="controls">
+                <button id="playBtn" class="btn btn-play">▶ Play</button>
+                <button id="soundBtn" class="btn btn-sound">🔊</button>
+                <button id="menuBtn" class="btn btn-menu">⋮</button>
+            </div>
+
+            <!-- Tsunami Info Display -->
+            <div class="tsunami-info">
+                <div class="info-box">
+                    <span>TSUNAMI HEIGHT:</span>
+                    <span id="tsunamiHeight">0m / 0ft</span>
+                </div>
+            </div>
+
+            <!-- Cities List -->
+            <div class="cities-overlay">
+                <div id="citiesList"></div>
+            </div>
+
+            <!-- Stats Panel -->
+            <div class="stats-panel">
+                <div class="stat">
+                    <label>Wave Height:</label>
+                    <input type="range" id="heightSlider" min="10" max="500" value="300">
+                    <span id="heightValue">300m</span>
+                </div>
+                <div class="stat">
+                    <label>Wave Speed:</label>
+                    <input type="range" id="speedSlider" min="1" max="10" value="5">
+                    <span id="speedValue">5x</span>
+                </div>
+                <div class="stat">
+                    <label>Affected Cities: <span id="affectedCount">0</span></label>
+                </div>
+            </div>
+
+            <!-- Menu Popup -->
+            <div id="menuPopup" class="menu-popup hidden">
+                <button id="resetBtn">Reset Simulation</button>
+                <button id="closeMenuBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
